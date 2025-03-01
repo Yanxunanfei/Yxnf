@@ -1,0 +1,18 @@
+import time
+import tkinter as tk
+from tkinter import messagebox
+
+def remind_to_drink_water():
+    # 创建一个隐藏的主窗口
+    root = tk.Tk()
+    root.withdraw()
+    # 弹出消息框提醒喝水
+    messagebox.showinfo("喝水提醒", "该喝水啦！保持水分充足，对身体好哦~")
+
+# 定义 1 小时的秒数
+one_hour = 60 * 60
+
+while True:
+    # 每隔 1 小时调用提醒函数
+    time.sleep(one_hour)
+    remind_to_drink_water()
