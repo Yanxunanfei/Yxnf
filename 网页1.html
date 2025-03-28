@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>触摸坐标显示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        #coordinate-display {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="coordinate-display">触摸屏幕查看坐标</div>
+    <script>
+        const display = document.getElementById('coordinate-display');
+
+        document.addEventListener('touchstart', function (event) {
+            const touch = event.touches[0];
+            const x = touch.clientX;
+            const y = touch.clientY;
+            display.textContent = `触摸点坐标: X = ${x}, Y = ${y}`;
+        });
+    </script>
+</body>
+
+</html>
+    
